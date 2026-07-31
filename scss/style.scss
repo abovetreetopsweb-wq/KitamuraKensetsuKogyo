@@ -54,6 +54,32 @@ body {
 /* #endregion base*/
 
 
+/* #region common*/
+
+//inner設定----------------------
+.inner {
+    max-width: 98rem;
+    margin-inline: auto;
+    padding-inline: 3rem;
+
+    @include mq {
+        width: 100%;
+    }
+}
+
+#container {
+    width: 100%;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* #endregion common*/
+
 /* #region header*/
 
 .header {
@@ -250,7 +276,7 @@ body {
     }
 
     /*メニューが開いた時の三本線*/
-    &.is-active{
+    &.is-active {
         span:nth-of-type(1) {
             top: 50%;
             transform: translate(-50%, -50%) rotate(45deg);
@@ -339,3 +365,72 @@ body {
 }
 
 /* #endregion  mv*/
+
+/* #region message*/
+.about {
+    width: 100%;
+    height: 100%;
+
+    &__contents {
+        width: 100%;
+        position: relative;
+    }
+
+    &__image {
+        width: 100%;
+        position: relative;
+    }
+
+    &__text {
+        padding-block: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -13.5%;
+        flex-direction: column;
+        writing-mode: vertical-rl;
+        position: absolute;
+
+        @include mq {
+            flex-direction: row;
+            column-gap: 2rem;
+            left: 0;
+        }
+    }
+
+    &__title {
+        @include font(3rem, 1.7);
+        letter-spacing: 0.18em;
+        text-wrap: nowrap;
+
+        @include mq {
+            @include font(clamp(25px, calc(25/375*100vw), 30px), 119%);
+        }
+    }
+
+    &__desc span {
+        display: block;
+        @include font(1.8rem, 2.66);
+        letter-spacing: 0.4em;
+        text-wrap: nowrap;
+
+        &:first-child {
+            margin-right: 3.7rem;
+
+            @include mq {
+                margin: 0.6rem;
+            }
+        }
+
+        @include mq {
+            @include font(clamp(16px, calc(16/375*100vw), 20px), 125%);
+            letter-spacing: 0.21em;
+            margin: 0.6rem;
+        }
+    }
+}
+
+/* #endregion message*/

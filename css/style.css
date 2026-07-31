@@ -21,6 +21,30 @@ body {
 }
 
 /* #endregion base*/
+/* #region common*/
+.inner {
+  max-width: 98rem;
+  margin-inline: auto;
+  padding-inline: 3rem;
+}
+@media (max-width: 768px) {
+  .inner {
+    width: 100%;
+  }
+}
+
+#container {
+  width: 100%;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* #endregion common*/
 /* #region header*/
 .header {
   width: 100%;
@@ -335,4 +359,94 @@ body {
   height: auto;
 }
 
-/* #endregion  mv*//*# sourceMappingURL=style.css.map */
+/* #endregion  mv*/
+/* #region message*/
+.about {
+  width: 100%;
+  height: 100%;
+}
+.about__contents {
+  width: 100%;
+  position: relative;
+}
+.about__image {
+  width: 100%;
+  position: relative;
+}
+.about__text {
+  padding-block: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -13.5%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  position: absolute;
+}
+@media (max-width: 768px) {
+  .about__text {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-column-gap: 2rem;
+       -moz-column-gap: 2rem;
+            column-gap: 2rem;
+    left: 0;
+  }
+}
+.about__title {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.18em;
+  text-wrap: nowrap;
+}
+@media (max-width: 768px) {
+  .about__title {
+    font-size: clamp(25px, 6.6666666667vw, 30px);
+    font-weight: 500;
+    line-height: 119%;
+  }
+}
+.about__desc span {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.66;
+  letter-spacing: 0.4em;
+  text-wrap: nowrap;
+}
+.about__desc span:first-child {
+  margin-right: 3.7rem;
+}
+@media (max-width: 768px) {
+  .about__desc span:first-child {
+    margin: 0.6rem;
+  }
+}
+@media (max-width: 768px) {
+  .about__desc span {
+    font-size: clamp(16px, 4.2666666667vw, 20px);
+    font-weight: 500;
+    line-height: 125%;
+    letter-spacing: 0.21em;
+    margin: 0.6rem;
+  }
+}
+
+/* #endregion message*//*# sourceMappingURL=style.css.map */
