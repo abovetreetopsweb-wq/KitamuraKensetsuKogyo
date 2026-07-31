@@ -1,11 +1,123 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <!--ディスクリプション-->
+  <meta name="description" content="株式会社北村建設興業の公式サイトです。">
+  <title>株式会社北村建設興業</title>
+  <!--OGP-->
+  <meta property="og:title" content="株式会社北村建設興業">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="SNSシェア時に表示するサムネイル画像の絶対パス">
+  <meta property="og:url" content="サイトのURL">
+  <meta property="og:description" content="株式会社北村建設興業の公式サイトです。">
+  <meta property="og:site_name" content="株式会社北村建設興業">
+  <meta property="og:locale" content="ja_JP">
+  <!-- ファビコン -->
+  <link rel="icon" href="" type="image/svg+xml" />
+  <!--css-->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!--スライサー-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 </head>
+
 <body>
-  
+  <div id="container">
+    <!-- #region header -->
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__contents">
+
+          <div class="header__logo">
+            <h1>
+              <a href="#">
+                株式会社北村建設興業
+              </a>
+            </h1>
+          </div>
+
+          <!--ハンバーガーメニュー-->
+          <div class="header__nav">
+            <button id="js-hamburger" class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <div class="header-menu">
+              <nav>
+                <ul>
+                  <li>
+                    <a href="#about">ABOUT</a>
+                  </li>
+                  <li>
+                    <a href="#service">SERVICE</a>
+                  </li>
+                  <li>
+                    <a href="#works">WORKS</a>
+                  </li>
+                  <li>
+                    <a href="#news">NEWS</a>
+                  </li>
+                  <li>
+                    <a href="#company">COMPANY</a>
+                  </li>
+                  <li>
+                    <a href="#contact">CONTACT</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- #endregion header -->
+
+    <main>
+      <!-- #region mv -->
+      <div class="mv">
+        <div class="mv__contents">
+          <div class="slide-area">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <picture>
+                    <source media="(min-width:768px )" srcset="./img/mv-pc01.jpg" />
+                    <img src="./img/mv-sp01.jpg" alt="木造住宅の外観" />
+                  </picture>
+                </div>
+                <div class="swiper-slide">
+                  <picture>
+                    <source media="(min-width:768px )" srcset="./img/mv-pc02.jpg" />
+                    <img src="./img/mv-sp02.jpg" alt="合掌造りの古民家が並ぶ集落" />
+                  </picture>
+                </div>
+                <div class="swiper-slide">
+                  <picture>
+                    <source media="(min-width:768px )" srcset="./img/mv-pc03.jpg" />
+                    <img src="./img/mv-sp03.jpg" alt="木造建築の商業施設の外観" />
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mv__copy">
+            <h2>
+              <span>永遠も。</span><span>瞬間も。<br>あなたと共に。</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+      <!-- #endregion mv -->
+    </main>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
