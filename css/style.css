@@ -549,7 +549,7 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: relativa;
+  position: relative;
   margin-bottom: 5.5rem;
   width: min(55.5555555556vw, 600px);
   z-index: 2;
@@ -1611,4 +1611,38 @@ input[type=submit]:hover {
   .copyright span {
     display: block;
   }
+}
+
+#fas-area {
+  position: fixed;
+  bottom: 6rem;
+  right: 6rem;
+}
+@media (max-width: 768px) {
+  #fas-area {
+    bottom: 6rem;
+    right: 2rem;
+  }
+}
+
+.fas {
+  width: 6.8rem;
+  height: 6.8rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #4D9600;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .fas {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.fas:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

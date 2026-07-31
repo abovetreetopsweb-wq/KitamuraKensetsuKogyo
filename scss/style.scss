@@ -511,7 +511,7 @@ img {
     &__images {
         display: flex;
         flex-direction: column;
-        position: relativa;
+        position: relative;
         margin-bottom: 5.5rem;
         width: min(calc(600/1080*100vw), 600px);
         z-index: 2;
@@ -1362,4 +1362,42 @@ input[type="submit"] {
             display: block;
         }
     }
+}
+
+
+
+
+//ボタンを右下に表示する
+#fas-area {
+    position: fixed;
+    bottom: 6rem;
+    right: 6rem;
+
+    @include mq {
+        bottom: 6rem;
+        right: 2rem;
+    }
+}
+
+//ボタンの色を変更
+.fas {
+    width: 6.8rem;
+    height: 6.8rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: $color-title;
+    color: $color-white;
+
+    @include mq {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+//ボタンをホバーした時のカーソルを変更
+.fas:hover {
+    cursor: pointer;
 }

@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- スマホで電話を自動リンク化しない -->
+  <meta name="format-detection" content="telephone=no">
   <!--ディスクリプション-->
   <meta name="description" content="株式会社北村建設興業の公式サイトです。">
   <title>株式会社北村建設興業</title>
@@ -22,6 +24,9 @@
   <link rel="stylesheet" href="css/style.css">
   <!--スライサー-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+  <!-- topへ戻る -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="stylesheet" href="css/aos.css">
 </head>
 
 <body>
@@ -552,82 +557,87 @@
         </div>
       </section>
       <!-- #endregion contact -->
-
-      <!-- #region footer -->
-      <footer class="footer">
-        <div class="inner">
-          <div class="footer__contents">
-            <div class="footer__logo">
-              <h1><a href="#">
-                  株式会社北村建設興業
-                </a>
-              </h1>
-            </div>
-            <div class="footer-menu">
-              <nav>
-                <ul>
-                  <li>
-                    <a href="#about">ABOUT</a>
-                  </li>
-                  <li>
-                    <a href="#service">SERVICE</a>
-                  </li>
-                  <li>
-                    <a href="#works">WORKS</a>
-                  </li>
-                  <li>
-                    <a href="#news">NEWS</a>
-                  </li>
-                  <li>
-                    <a href="#company">COMPANY</a>
-                  </li>
-                  <li>
-                    <a href="#contact">CONTACT</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <ul class="sns__lists">
-              <li>
-                <a href="" class="sns__list ">
-                  <span class="sns__link--x"><img src="./img/icon-twitter.svg" alt="xのアイコン"></span>
-                </a>
-              </li>
-              <li>
-                <a href="" class="sns__list ">
-                  <span class="sns__link--facebook"><img src="./img/icon-facebook.svg" alt="facebookのアイコン"></span>
-                </a>
-              </li>
-              <li>
-                <a href="" class="sns__list ">
-                  <span class="sns__link--youtube"><img src="./img/icon-youtube.svg" alt="youtubeのアイコン"></span>
-                </a>
-              </li>
-              <li>
-                <a href="" class="sns__list ">
-                  <span class="sns__link--instagram"><img src="./img/icon-instagram.svg" alt="instagramのアイコン"></span>
-                </a>
-              </li>
-
-            </ul>
+    </main>
+    <!-- #region footer -->
+    <footer class="footer">
+      <div class="inner">
+        <div class="footer__contents">
+          <div class="footer__logo">
+            <h1><a href="#">
+                株式会社北村建設興業
+              </a>
+            </h1>
           </div>
-        </div>
-      </footer>
-      <!-- #endregion footer -->
-      <!-- #region copyright -->
-      <div class="copyright contents__sheet">
-        <div class="inner">
-          <p> &copy;Copyright0000　<span>kitamurakensetukogyo</span></p>
+          <div class="footer-menu">
+            <nav>
+              <ul>
+                <li>
+                  <a href="#about">ABOUT</a>
+                </li>
+                <li>
+                  <a href="#service">SERVICE</a>
+                </li>
+                <li>
+                  <a href="#works">WORKS</a>
+                </li>
+                <li>
+                  <a href="#news">NEWS</a>
+                </li>
+                <li>
+                  <a href="#company">COMPANY</a>
+                </li>
+                <li>
+                  <a href="#contact">CONTACT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <ul class="sns__lists">
+            <li>
+              <a href="" class="sns__list ">
+                <span class="sns__link--x"><img src="./img/icon-twitter.svg" alt="xのアイコン"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="sns__list ">
+                <span class="sns__link--facebook"><img src="./img/icon-facebook.svg" alt="facebookのアイコン"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="sns__list ">
+                <span class="sns__link--youtube"><img src="./img/icon-youtube.svg" alt="youtubeのアイコン"></span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="sns__list ">
+                <span class="sns__link--instagram"><img src="./img/icon-instagram.svg" alt="instagramのアイコン"></span>
+              </a>
+            </li>
+
+          </ul>
         </div>
       </div>
-      <!-- #endregion copyright -->
+    </footer>
+    <!-- #endregion footer -->
+    <!-- #region copyright -->
+    <div class="copyright contents__sheet">
+      <div class="inner">
+        <p> &copy;Copyright0000　<span>kitamurakensetukogyo</span></p>
+      </div>
+    </div>
+    <!-- #endregion copyright -->
 
-
-    </main>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-  <script src="js/main.js"></script>
+    <div id="fas-area">
+      <i class="fas fa-solid fa-chevron-up"></i>
+    </div>
+    <!-- Top戻る -->
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
