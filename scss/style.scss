@@ -859,3 +859,106 @@ body.is-modal-open {
 }
 
 /* #endregion news*/
+
+
+/* #region company*/
+.company {
+    padding-block: 8.2rem;
+
+    @include mq {
+        padding-block: 5rem;
+    }
+}
+
+.company__contents {
+    margin-top: 6.8rem;
+    display: flex;
+    column-gap: 3rem;
+    width: 100%;
+    height: 46.1rem;
+    position: relative;
+
+    @include mq {
+        margin-top: 3.8rem;
+        height: auto;
+        position: static;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+}
+
+.company__map {
+    position: relative;
+    width: min(calc(600/1080*100vw), 600px);
+    height: 400px;
+    z-index: 999;
+
+    @include mq {
+        width: 100%;
+        aspect-ratio: 315/300;
+        position: static;
+    }
+
+    & iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.company__info {
+    position: absolute;
+    width: calc(500/1080*100vw);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 1rem;
+    padding-block: 4.5rem;
+    padding-right: min(calc(30/1080*100vw), 1%);
+    bottom: 0rem;
+    right: 0;
+    z-index: 99;
+
+    @include mq {
+        width: 100%;
+        align-items: flex-start;
+        padding: 1.4rem 2rem;
+        position: static;
+    }
+}
+
+address {
+    margin-right: 3.5rem;
+    color: #fff;
+}
+
+
+.company__info h3 {
+    margin-top: 0.4rem;
+    display: block;
+    @include font(2rem, calc(33/20), $font-weight-demibold);
+}
+
+.company__info span {
+    margin-top: 0.9rem;
+    display: block;
+    @include font(1.6rem, calc(25/16), $font-weight-demibold);
+
+    @include mq {
+        &:nth-of-type(3) {
+            margin-top: 1.2rem;
+        }
+    }
+}
+
+.telephone-pc {
+    @include font(2.5rem, calc(33/25), $font-weight-demibold);
+}
+
+.company__info a {
+    margin-top: 1.1rem;
+}
+
+
+/* #endregion company*/
