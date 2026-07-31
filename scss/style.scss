@@ -621,3 +621,119 @@ img {
 
 
 /* #endregion service*/
+
+
+/* #region works*/
+
+.works {
+    padding-block: 8.3rem 9.5rem;
+
+    @include mq {
+        padding-block: 5rem 4.2rem;
+    }
+
+    &__contents {
+        margin-top: 6.8rem;
+
+        @include mq {
+            margin-top: 3.8rem;
+        }
+    }
+
+    &-items {
+        display: flex;
+        column-gap: calc(40/1080*100vw);
+
+        @include mq {
+            flex-direction: column;
+            row-gap: 2.1rem;
+        }
+    }
+}
+
+.works-item {
+    flex: 1;
+    cursor: pointer;
+
+    &__desc {
+        margin-top: 2rem;
+
+        @include mq {
+            margin-top: 1rem;
+        }
+
+        p {
+            @include font(1.6rem, calc(25/16));
+        }
+    }
+}
+
+body.is-modal-open {
+    overflow: hidden;
+}
+
+
+/*モーダル全体*/
+.modal-area {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+
+/*モーダル外の背景*/
+.modal-bg {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0, 0.5);
+    opacity: .4;
+}
+
+/*モーダル外の内容部分*/
+.modal-content {
+    position: absolute;
+    background: $color-white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(450/1080*100vw);
+    height: auto;
+    text-align: center;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    @include mq{
+        width: calc(315/375*100vw);
+        padding: 2rem;
+    }
+    img{
+        width: calc(420/1080*100vw);
+        @include mq{
+            width: calc(274/375*100vw);
+        }
+    }
+    p{
+        @include font(1.6rem,calc(25/16));
+        text-align: left;
+        margin-top: 0.9rem;
+        @include mq{
+            margin-top: 0.7rem;
+        }
+    }
+}
+
+/*ウィンドウを閉じるボタン*/
+.modal-cancel {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    cursor: pointer;
+}
+
+/* #endregion works*/
