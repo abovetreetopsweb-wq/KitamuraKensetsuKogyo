@@ -4,6 +4,11 @@ $("#js-hamburger").click(function(){
     $(".header-menu").toggleClass("is-open");
 });
 
+$(".header-menu a").click(function(){
+    $(".hamburger").removeClass("is-active");
+    $(".header-menu").removeClass("is-open");
+});
+
 //*スライサー
 const swiper = new Swiper('.swiper',{
     //1枚目へ戻って繰り返す
