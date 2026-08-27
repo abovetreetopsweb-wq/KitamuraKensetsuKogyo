@@ -27,7 +27,6 @@ $(".modal-open").click(
         $(this).find(".modal-area").show()
         $("body").addClass("is-modal-open");
         goTop.hide();
-        header.hide();
     }
 );
 
@@ -37,7 +36,6 @@ $(".modal-close").click(
         $("body").removeClass("is-modal-open");
         if ($(window).scrollTop() > 100) {
     goTop.show();
-      header.show();
 }
     }
 );
@@ -92,4 +90,10 @@ $(window).scroll(function () {
   } else {
     header.removeClass("is-bg");
   }
+});
+
+//AOS
+AOS.init({
+  duration: 900,//デフォは400で登場の速度を変える値
+  once: true//登場を一回限りにする値
 });
