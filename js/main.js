@@ -1,29 +1,35 @@
 //ハンバーガー
-$("#js-hamburger").click(function(){
+$("#js-hamburger").click(function () {
     $(".hamburger").toggleClass("is-active");
+    $(".header-menu").addClass("is-animated");
     $(".header-menu").toggleClass("is-open");
 });
 
-$(".header-menu a").click(function(){
+$(".header-menu a").click(function () {
     $(".hamburger").removeClass("is-active");
     $(".header-menu").removeClass("is-open");
 });
 
+$(".header-menu").on("transitionend",function () {
+    $(this).removeClass("is-animated");
+});
+
+
 //*スライサー
-const swiper = new Swiper('.swiper',{
+const swiper = new Swiper('.swiper', {
     //1枚目へ戻って繰り返す
-    loop:true,
+    loop: true,
     speed: 1000,
     autoplay: {
-  delay: 3000,
-},
+        delay: 3000,
+    },
 });
 
 
 
 //モーダル
 $(".modal-open").click(
-    function(){
+    function () {
         $(this).find(".modal-area").show()
         $("body").addClass("is-modal-open");
         goTop.hide();
@@ -31,12 +37,13 @@ $(".modal-open").click(
 );
 
 $(".modal-close").click(
-    function(e){e.stopPropagation();
+    function (e) {
+        e.stopPropagation();
         $(this).closest(".modal-area").hide()
         $("body").removeClass("is-modal-open");
         if ($(window).scrollTop() > 100) {
-    goTop.show();
-}
+            goTop.show();
+        }
     }
 );
 
@@ -51,19 +58,19 @@ var goTop = $(".fas");
 goTop.hide();
 
 //100pxスクロールしたらボタン表示・100px以下ならボタン非表示
-$(window).scroll(function(){
-    if ($(this).scrollTop()>100){
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
         // 0.3でフェードイン
-    goTop.fadeIn(300);
-    }else{
+        goTop.fadeIn(300);
+    } else {
         //0.3秒でフェードアウト
         goTop.fadeOut(300)
     }
 });
 
 //ボタンがクリックされたら1秒でページトップへ戻る
-goTop.click(function(){
-    $("body,html").animate({scrollTop:0},1000);
+goTop.click(function () {
+    $("body,html").animate({ scrollTop: 0 }, 1000);
     return false;
 })
 
@@ -74,26 +81,26 @@ var about = $("#about");
 
 // スクロールしたとき
 $(window).scroll(function () {
-  // ABOUTの上端位置
-  var aboutTop = about.offset().top;
+    // ABOUTの上端位置
+    var aboutTop = about.offset().top;
 
-  // 現在のスクロール位置
-  var scrollTop = $(this).scrollTop();
+    // 現在のスクロール位置
+    var scrollTop = $(this).scrollTop();
 
-  // ヘッダーの高さ
-  var headerHeight = header.outerHeight();
+    // ヘッダーの高さ
+    var headerHeight = header.outerHeight();
 
-  // ABOUTがヘッダーの下まで来たら背景色を付ける
-  //一時的にこうなる→<header class="header is-bg">
-  if (scrollTop >= aboutTop - headerHeight) {
-    header.addClass("is-bg");
-  } else {
-    header.removeClass("is-bg");
-  }
+    // ABOUTがヘッダーの下まで来たら背景色を付ける
+    //一時的にこうなる→<header class="header is-bg">
+    if (scrollTop >= aboutTop - headerHeight) {
+        header.addClass("is-bg");
+    } else {
+        header.removeClass("is-bg");
+    }
 });
 
 //AOS
 AOS.init({
-  duration: 900,//デフォは400で登場の速度を変える値
-  once: true//登場を一回限りにする値
+    duration: 900,//デフォは400で登場の速度を変える値
+    once: true//登場を一回限りにする値
 });

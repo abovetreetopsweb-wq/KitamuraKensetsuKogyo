@@ -36,7 +36,7 @@ $breakpoint: 767px;
 }
 
 @mixin mq-header {
-    @media (max-width: 950px) {
+    @media (max-width: 820px) {
         @content;
     }
 }
@@ -154,7 +154,7 @@ img {
     z-index: 1000;
     transition: background-color 0.3s;
 
-    @include mq-header {
+    @include mq {
         height: 5rem;
     }
 
@@ -168,7 +168,7 @@ img {
         margin-inline: auto;
         padding-inline: 3rem;
 
-        @include mq-header {
+        @include mq {
             width: 100%;
             padding-inline: 0;
         }
@@ -180,7 +180,7 @@ img {
         height: inherit;
         justify-content: space-between;
 
-        @include mq-header {
+        @include mq {
             height: 5rem;
         }
     }
@@ -209,6 +209,10 @@ img {
         }
 
         @include mq-header {
+            font-size: 1.8rem;
+        }
+
+        @include mq {
             height: 5rem;
             @include font(2rem, calc(33/20));
             padding-inline: 2rem;
@@ -224,7 +228,15 @@ img {
         align-items: center;
         column-gap: 2.85rem;
 
-        @include mq-header {
+        @include mq(930px){
+            column-gap: 2rem;
+        }
+
+        @include mq (880px){
+            column-gap: 1.3rem;
+        }
+
+        @include mq {
             display: block;
             margin: 0;
             list-style: none;
@@ -240,7 +252,7 @@ img {
         align-items: center;
         list-style: none;
 
-        @include mq-header {
+        @include mq {
             width: 100%;
             height: 5.8rem;
         }
@@ -252,6 +264,7 @@ img {
         align-items: center;
         height: 8rem;
         font-size: 1.8rem;
+        text-wrap: nowrap;
         text-decoration: none;
         color: $color-white;
         //★メニューの下線のアニメーション★
@@ -261,7 +274,11 @@ img {
             padding-right: 0;
         }
 
-        @include mq-header {
+        @include mq-header{
+            font-size: 1.6rem;
+        }
+
+        @include mq {
             display: block;
             width: 100%;
             padding: 2rem;
@@ -272,7 +289,7 @@ img {
         &::after {
             content: "";
             position: absolute;
-            bottom: 2.8rem;
+            bottom: 2.6rem;
             width: 100%;
             height: 1px;
             background-color: $color-white;
@@ -288,7 +305,7 @@ img {
             }
         }
 
-        @include mq-header {
+        @include mq {
             display: block;
             height: auto;
 
@@ -296,7 +313,7 @@ img {
     }
 
 
-    @include mq-header {
+    @include mq {
         /*ナビゲーション（中身）*/
         position: fixed;
         width: 300px;
@@ -306,6 +323,10 @@ img {
         bottom: 0;
         background: $color-title;
         transform: translateX(100%);
+        /* transition: transform .4s;*/
+    }
+
+    &.is-animated {
         transition: transform .4s;
     }
 
@@ -319,7 +340,7 @@ img {
 .hamburger {
     display: none;
 
-    @include mq-header {
+    @include mq {
         position: relative;
         display: block;
         width: 72px;
@@ -401,7 +422,6 @@ img {
         align-items: center;
         text-align: center;
         margin-top: 1.4rem;
-        margin-left: 0.5rem;
         top: 0;
         left: 0;
         z-index: 2;
@@ -414,6 +434,8 @@ img {
             color: $color-white;
             @include font(vw(40, 1080), calc(70/40), $font-weight-demibold);
             letter-spacing: 0.3em;
+            transform: translateX(0.15em);
+           
             //シャドウ
             text-shadow: 0.5rem 0.5rem 0.5rem #000;
 
@@ -425,6 +447,7 @@ img {
 
             span {
                 text-align: center;
+                
 
                 @include mq {
                     display: block;
@@ -528,7 +551,7 @@ img {
     }
 
     &__contents {
-        margin-top: 6.8rem;
+        margin-top: 6.9rem;
 
         @include mq {
             margin-top: 3.8rem;
@@ -541,7 +564,7 @@ img {
     display: flex;
     flex-direction: column;
     width: 100%;
-    row-gap: 8rem;
+    row-gap: 7.95rem;
 
     @include mq {
         row-gap: 5rem;
@@ -552,9 +575,8 @@ img {
 /*item パターン1*/
 .service-item {
     width: 100%;
-    height: 39.5rem;
     display: flex;
-    column-gap: 6.8rem;
+    align-items: flex-end;
 
     @include mq(970px) {
         column-gap: 3%;
@@ -572,13 +594,13 @@ img {
     &__images {
         display: flex;
         flex-direction: column;
-        margin-bottom: 5.5rem;
-        width: calc(600/920*100%);
+        padding-bottom: 4.7rem;
+        flex-basis: calc(600/920*100%);
         z-index: 3;
 
         @include mq {
             width: 100%;
-            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
 
@@ -596,11 +618,11 @@ img {
 
 
 .service-item__images p {
-    margin-top: 2.5rem;
+    margin-top: 2.3rem;
     @include font(1.6rem, calc(25/16));
 
     @include mq {
-        margin-block: 0.6rem;
+        margin-block: 0.59rem;
     }
 }
 
@@ -614,6 +636,34 @@ img {
 
 .service-item__text {
     flex: 1;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    z-index: 2;
+
+    @include mq {
+        width: 100%;
+        padding-block: 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        z-index: 2;
+        background: $color-title;
+    }
+
+
+}
+
+
+.service-item__text-b {
+    flex: 1;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: relative;
+    z-index: 2;
 
     @include mq {
         width: 100%;
@@ -624,29 +674,32 @@ img {
 }
 
 
-.service-item__desc {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    row-gap: 2rem;
-    padding: 0 2rem 4rem 0;
-    position: relative;
-    z-index: 2;
 
-    @include mq(900px) {
-        padding-left: 0.5rem;
+
+
+
+.service-item__desc {
+    padding: 4.2rem 2.8rem;
+
+    @include mq(1000px) {
+        padding-inline: 1.8rem 1.5rem;
     }
 
     @include mq {
         row-gap: 1.5rem;
-        padding: 2rem 2rem 1rem 2rem;
+        padding: 2rem 2rem 0.9rem 2rem;
     }
 
     & h3 {
         @include font(2.5rem, calc(33/25), $font-weight-demibold);
         color: #fff;
+        position: relative;
         z-index: 2;
+
+        @include mq(1000px) {
+            @include font(clamp(2rem, 2rem, 2.5rem), calc(33/25), $font-weight-demibold);
+        }
+
 
         @include mq {
             @include font(2rem, calc(25/20), $font-weight-demibold);
@@ -656,17 +709,24 @@ img {
     }
 
     & p {
+        margin-top: 1.8rem;
         @include font(1.6rem, calc(25/16), $font-weight-demibold);
         color: #fff;
+        position: relative;
         z-index: 2;
+
+        @include mq {
+            margin-top: 1.6rem;
+        }
+
     }
 
     &::after {
         position: absolute;
         content: '';
         background: $color-title;
-        width: 50rem;
-        height: 25rem;
+        width: 156%;
+        height: 102.5%;
         bottom: 0;
         right: 0;
         z-index: 1;
@@ -680,11 +740,12 @@ img {
 }
 
 .service-item__desc-b {
-    padding: 0 0 4rem 4rem;
+    padding: 4.2rem 2.8rem 4.1rem 4rem;
 
-    @include mq(980px) {
-        padding-left: 3rem;
+    @include mq(1000px) {
+        padding-inline: 1.5rem 1.8rem;
     }
+
 
     @include mq {
         row-gap: 1.5rem;
@@ -696,8 +757,8 @@ img {
         position: absolute;
         content: '';
         background: $color-title;
-        width: 50rem;
-        height: 25rem;
+        width: 156%;
+        height: 102.5%;
         bottom: 0;
         left: 0;
         z-index: 1;
@@ -792,7 +853,7 @@ body.is-modal-open {
 .modal-bg {
     width: 100%;
     height: 100%;
-    background: rgb(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.502);
     opacity: .4;
 }
 
@@ -811,11 +872,11 @@ body.is-modal-open {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 0.7rem 1.5rem;
 
     @include mq {
         width: 31.5rem;
-        padding: 2rem;
+        padding: 2.05rem 2.05rem 1.4rem 2.05rem;
     }
 
     img {
@@ -841,8 +902,9 @@ body.is-modal-open {
 /*ウィンドウを閉じるボタン*/
 .modal-cancel {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 4.4px;
+    right: 4.4px;
+    font-size: 2rem;
     cursor: pointer;
 }
 
@@ -873,7 +935,7 @@ body.is-modal-open {
 
     &__items {
         background: #fff;
-        flex: 1;
+        flex: 0 0 calc((100% - 60px) / 2);
         display: flex;
         flex-direction: column;
 
@@ -979,7 +1041,6 @@ body.is-modal-open {
             &:hover {
                 p {
                     transform: translateX(10px);
-                    opacity: 0.7;
                 }
             }
         }
@@ -1003,29 +1064,27 @@ body.is-modal-open {
 .company__contents {
     margin-top: 6.6rem;
     display: flex;
-    column-gap: 4rem;
     width: 100%;
-    height: 46.1rem;
     position: relative;
-
-    @include mq(970px) {
-        column-gap: 2%;
-    }
-
 
     @include mq {
         margin-top: 3.8rem;
         height: auto;
         position: static;
         flex-direction: column;
-        row-gap: 2rem;
+        row-gap: 1.9rem;
     }
 }
 
 .company__map {
     width: calc(600/920*100%);
     height: auto;
+    padding-bottom: 6rem;
     z-index: 999;
+
+    @include mq {
+        padding-bottom: 0rem;
+    }
 
     &-inner {
         aspect-ratio: 600/400;
@@ -1049,28 +1108,12 @@ body.is-modal-open {
 
 .company__info {
     flex: 1;
-    height: 46.2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     row-gap: 1rem;
-    z-index: 9;
-    position: relative;
 
-    &::after {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        content: '';
-        width: 50rem;
-        height: 26.2rem;
-        background: $color-title;
-        z-index: 99;
 
-        @include mq {
-            display: none;
-        }
-    }
 
     @include mq {
         width: 100%;
@@ -1083,18 +1126,34 @@ body.is-modal-open {
 }
 
 address {
-    margin-right: 2rem;
-    margin-bottom: 3.8rem;
-    color: #fff;
-    z-index: 999;
 
-    @include mq(900px) {
-        margin-right: 0rem;
+    color: #fff;
+    z-index: 99;
+    position: relative;
+    padding: 4rem 3.8rem;
+
+    @include mq(1000px) {
+        padding-inline: 1.8rem 1.5rem;
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        content: '';
+        width: 156%;
+        height: 99%;
+        background: $color-title;
+        z-index: 1;
+
+        @include mq {
+            display: none;
+        }
     }
 
 
     @include mq {
-        margin-bottom: 0rem;
+        padding: 0;
     }
 }
 
@@ -1103,20 +1162,28 @@ address {
     margin-top: 1rem;
     display: block;
     @include font(2rem, calc(33/20), $font-weight-demibold);
+    z-index: 9;
+    position: relative;
 }
 
 .company__info span {
     margin-top: 0.9rem;
     display: block;
     @include font(1.6rem, calc(25/16), $font-weight-demibold);
+    z-index: 9;
+    position: relative;
 
     &:nth-of-type(3) {
         margin-top: 1.5rem;
     }
 
     @include mq {
+        &:nth-of-type(2) {
+            margin-top: 0.7rem;
+        }
+
         &:nth-of-type(3) {
-            margin-top: 1.2rem;
+            margin-top: 1.4rem;
         }
     }
 }
@@ -1239,8 +1306,8 @@ form {
         align-items: center;
         @include font(2rem, calc(33/20));
 
-        @include mq{
-            width:auto;
+        @include mq {
+            width: auto;
         }
 
         label {
@@ -1257,36 +1324,37 @@ form {
 
     }
 
-    
+
 
     @include mq {
         width: 100%;
     }
 
 
-dd {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    @include font(1.8rem, calc(25/18));
+    dd {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        @include font(1.8rem, calc(25/18));
 
-    @include mq {
-        width: 100%;
-        @include font(1.6rem, calc(25/16));
+        @include mq {
+            width: 100%;
+            @include font(1.6rem, calc(25/16));
+        }
     }
-}
 
 }
+
 .column {
     flex-direction: row;
-    
+
 }
 
 .form__area-column {
     width: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 0.6rem;
 
     @include mq {
         row-gap: 0rem;
@@ -1440,7 +1508,7 @@ dd {
                 margin-top: 3.1rem;
 
                 @include mq {
-                    margin-top: 3rem;
+                    margin-top: 3.3rem;
                 }
             }
         }
@@ -1512,25 +1580,29 @@ input::placeholder {
 
 .reason__text {
     @include mq {
-        line-height: calc(27/20);
+        line-height: calc(25/20);
     }
 }
 
 .checkbox-lists {
     display: flex;
-    row-gap: 1.5rem;
+    row-gap: 1rem;
     flex-wrap: wrap;
 
     @include mq {
-        row-gap: 0.5rem;
+        row-gap: 0rem;
         column-gap: 0.5rem;
     }
 }
 
 .checkbox-list {
     width: 200px;
+
     label {
-        display: flex;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
 
         input+span {
             display: block;
@@ -1580,13 +1652,13 @@ input::placeholder {
 
     @include mq {
         width: 48%;
-        align-items: center;
     }
-   
+
 }
 
 
 textarea {
+    margin-top: 0.5rem;
     width: 100%;
     height: 200px;
     background: #fff;
@@ -1595,6 +1667,7 @@ textarea {
     resize: none;
 
     @include mq {
+        margin-top: 0rem;
         width: 100%;
     }
 }
@@ -1797,39 +1870,8 @@ input[type="submit"] {
 //ボタンの色を変更
 .fas {
     width: 6.8rem;
-    height: 6.8rem;
-    font-size: 3.5rem;
-    font-weight: 600;
     display: grid;
     place-items: center;
-    border-radius: 50%;
-    background: $color-title;
-    color: $color-white;
-    border: 1px solid $color-title;
-    position: relative;
-
-    &:after {
-        content: '';
-        position: absolute;
-
-        background-image: url("../img/icon-to-top.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-
-        width: 2.315rem;
-        height: 1.57rem;
-
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        @include mq {
-            width: 1.7rem;
-            height: 1.15rem;
-        }
-    }
-
 
     @include mq {
         width: 5rem;
