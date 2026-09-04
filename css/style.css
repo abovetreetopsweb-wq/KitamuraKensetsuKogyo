@@ -778,6 +778,9 @@ img {
   .service-item__text-b {
     width: 100%;
     padding-block: 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     z-index: 2;
     background: #4D9600;
   }
